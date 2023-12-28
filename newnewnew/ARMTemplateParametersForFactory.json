@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "newnewnew"
+		},
+		"NEWlinkedService1_clusterPassword": {
+			"value": ""
+		},
+		"NEWlinkedService1_clusterSshPassword": {
+			"value": ""
+		},
+		"NEWlinkedService1_servicePrincipalKey": {
+			"value": ""
+		},
+		"newAzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"NEWlinkedService1_properties_typeProperties_hostSubscriptionId": {
+			"value": "7eaba0ec-4235-43fc-b940-3b78739b2573"
+		},
+		"NEWlinkedService1_properties_typeProperties_clusterResourceGroup": {
+			"value": "pres"
+		},
+		"NEWlinkedService1_properties_typeProperties_servicePrincipalId": {
+			"value": "e6075603-e386-4026-a332-3e932e605b2c"
+		},
+		"NEWlinkedService1_properties_typeProperties_tenant": {
+			"value": "0b7d2613-2a2e-4a10-b3b5-2b9fd01fac78"
+		}
+	}
+}

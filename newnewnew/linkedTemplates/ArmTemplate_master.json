@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "newnewnew"
+		},
+		"NEWlinkedService1_clusterPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterPassword' of 'NEWlinkedService1'"
+		},
+		"NEWlinkedService1_clusterSshPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterSshPassword' of 'NEWlinkedService1'"
+		},
+		"NEWlinkedService1_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'NEWlinkedService1'"
+		},
+		"newAzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'newAzureBlobStorage1'"
+		},
+		"NEWlinkedService1_properties_typeProperties_hostSubscriptionId": {
+			"type": "string",
+			"defaultValue": "7eaba0ec-4235-43fc-b940-3b78739b2573"
+		},
+		"NEWlinkedService1_properties_typeProperties_clusterResourceGroup": {
+			"type": "string",
+			"defaultValue": "pres"
+		},
+		"NEWlinkedService1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "e6075603-e386-4026-a332-3e932e605b2c"
+		},
+		"NEWlinkedService1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "0b7d2613-2a2e-4a10-b3b5-2b9fd01fac78"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "newnewnew_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"newAzureBlobStorage1_connectionString": {
+						"value": "[parameters('newAzureBlobStorage1_connectionString')]"
+					},
+					"NEWlinkedService1_clusterPassword": {
+						"value": "[parameters('NEWlinkedService1_clusterPassword')]"
+					},
+					"NEWlinkedService1_clusterSshPassword": {
+						"value": "[parameters('NEWlinkedService1_clusterSshPassword')]"
+					},
+					"NEWlinkedService1_servicePrincipalKey": {
+						"value": "[parameters('NEWlinkedService1_servicePrincipalKey')]"
+					},
+					"NEWlinkedService1_properties_typeProperties_hostSubscriptionId": {
+						"value": "[parameters('NEWlinkedService1_properties_typeProperties_hostSubscriptionId')]"
+					},
+					"NEWlinkedService1_properties_typeProperties_clusterResourceGroup": {
+						"value": "[parameters('NEWlinkedService1_properties_typeProperties_clusterResourceGroup')]"
+					},
+					"NEWlinkedService1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('NEWlinkedService1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"NEWlinkedService1_properties_typeProperties_tenant": {
+						"value": "[parameters('NEWlinkedService1_properties_typeProperties_tenant')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
