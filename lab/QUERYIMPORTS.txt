@@ -4,7 +4,7 @@
 
 bash
 
-mysql -uroot -pAditya908 -h zeyo41.cxwcisism4kh.ap-south-1.rds.amazonaws.com
+mysql -uroot -pAditya908 -h database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com
 
 ================
 🔴 Database creation
@@ -65,7 +65,7 @@ quit;
 
 
 
-sqoop import --connect jdbc:mysql://zeyo41.cxwcisism4kh.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --query "select a.*,b.product from z1 a join z2 b on a.id=b.id where \$CONDITIONS" --m 1 --delete-target-dir --target-dir /user/LABUSER/joindir
+sqoop import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --query "select a.*,b.product from z1 a join z2 b on a.id=b.id where \$CONDITIONS" --m 1 --delete-target-dir --target-dir /user/LABUSER/joindir
 
 ================
 🔴 validate data

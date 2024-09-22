@@ -2,7 +2,7 @@
 🔴 Incremental Lab
 ====================
 
-mysql -uroot -pAditya908 -h zeyodb.cj2mwoegyx76.ap-south-1.rds.amazonaws.com
+mysql -uroot -pAditya908 -h database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com
 
 create database if not exists LABUSER;
 use LABUSER;
@@ -19,7 +19,7 @@ quit
 🔴 Sqoop Import
 ======
 
-sqoop import --connect jdbc:mysql://zeyodb.cj2mwoegyx76.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table zeyotab --m 1 --delete-target-dir --target-dir /user/LABUSER/inimport
+sqoop import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table zeyotab --m 1 --delete-target-dir --target-dir /user/LABUSER/inimport
 
 
 ======
@@ -36,7 +36,7 @@ hadoop fs -cat  /user/LABUSER/inimport/part-m-00000
 ======
 
 
-mysql -uroot -pAditya908 -h zeyodb.cj2mwoegyx76.ap-south-1.rds.amazonaws.com
+mysql -uroot -pAditya908 -h database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com
 
 create database if not exists LABUSER;
 use LABUSER;
@@ -51,7 +51,7 @@ quit
 🔴 SQOOP Incremental Import
 ======
 
-sqoop import --connect jdbc:mysql://zeyodb.cj2mwoegyx76.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table zeyotab --m 1 --target-dir /user/LABUSER/inimport --incremental append --check-column id --last-value 4
+sqoop import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table zeyotab --m 1 --target-dir /user/LABUSER/inimport --incremental append --check-column id --last-value 4
 
 ======
 🔴 NEW File with only 2 records
