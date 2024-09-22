@@ -1,12 +1,11 @@
 ====================
-🔴 Incremental CLOUDERA
+🔴 Incremental Lab
 ====================
 
-hadoop dfsadmin -safemode leave
+mysql -uroot -pAditya908 -h zeyodb.cj2mwoegyx76.ap-south-1.rds.amazonaws.com
 
-mysql -uroot -pcloudera
-create database if not exists zeyodb;
-use zeyodb;
+create database if not exists LABUSER;
+use LABUSER;
 drop table if exists zeyotab;
 create table zeyotab (id int,name varchar(100),city varchar(100),mode varchar(100));
 insert into zeyotab values(1,'zeyo','chennai','cash');
@@ -20,8 +19,7 @@ quit
 🔴 Sqoop Import
 ======
 
-
-sqoop import --connect jdbc:mysql://localhost/zeyodb --username root --password cloudera --table zeyotab --m 1  --delete-target-dir --target-dir /user/cloudera/inimportnew
+sqoop import --connect jdbc:mysql://zeyodb.cj2mwoegyx76.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table zeyotab --m 1 --delete-target-dir --target-dir /user/LABUSER/inimport
 
 
 ======
@@ -29,9 +27,8 @@ sqoop import --connect jdbc:mysql://localhost/zeyodb --username root --password 
 ======
 
 
-hadoop fs -ls /user/cloudera/inimportnew
-
-hadoop fs -cat /user/cloudera/inimportnew/part-m-00000
+hadoop fs -ls  /user/LABUSER/inimport
+hadoop fs -cat  /user/LABUSER/inimport/part-m-00000
 
 
 ======
@@ -39,27 +36,28 @@ hadoop fs -cat /user/cloudera/inimportnew/part-m-00000
 ======
 
 
-mysql -uroot -pcloudera
-use zeyodb;
+mysql -uroot -pAditya908 -h zeyodb.cj2mwoegyx76.ap-south-1.rds.amazonaws.com
 
-insert into zeyotab values(3,'rani','chennai','cash');
-insert into zeyotab values(5,'rani','chennai','cash');
-insert into zeyotab values(6,'rita','delhi','credit');
+create database if not exists LABUSER;
+use LABUSER;
+
+insert into zeyotab values(5,'ramu','chennai','cash');
+insert into zeyotab values(6,'vasu','delhi','credit');
 select * from zeyotab;
 quit
+
 
 ======
 🔴 SQOOP Incremental Import
 ======
 
-sqoop import --connect jdbc:mysql://localhost/zeyodb --username root --password cloudera --table zeyotab --m 1 --target-dir /user/cloudera/inimportnew --incremental append --check-column id --last-value 4
-
+sqoop import --connect jdbc:mysql://zeyodb.cj2mwoegyx76.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table zeyotab --m 1 --target-dir /user/LABUSER/inimport --incremental append --check-column id --last-value 4
 
 ======
 🔴 NEW File with only 2 records
 ======
 
 
-hadoop fs -ls /user/cloudera/inimportnew
 
-hadoop fs -cat /user/cloudera/inimportnew/part-m-00001
+hadoop fs -ls  /user/LABUSER/inimport
+hadoop fs -cat  /user/LABUSER/inimport/part-m-00001
