@@ -44,7 +44,8 @@ use LABUSER;
 insert into zeyotab values(5,'ramu','chennai','cash');
 insert into zeyotab values(6,'vasu','delhi','credit');
 select * from zeyotab;
-quit
+quit;
+quit;
 
 
 ======
