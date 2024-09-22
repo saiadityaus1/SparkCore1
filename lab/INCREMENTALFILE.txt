@@ -13,6 +13,11 @@ insert into zeyotab values(2,'hema','hyderabad','credit');
 insert into zeyotab values(3,'raji','chennai','cash');
 insert into zeyotab values(4,'viru','delhi','credit');
 select * from zeyotab;
+
+============
+🔴quit from mysql
+============
+
 quit
 
 ======
@@ -44,8 +49,10 @@ use LABUSER;
 insert into zeyotab values(5,'ramu','chennai','cash');
 insert into zeyotab values(6,'vasu','delhi','credit');
 select * from zeyotab;
-quit;
-quit;
+
+============
+🔴 quit from mysql
+============
 
 
 ======
