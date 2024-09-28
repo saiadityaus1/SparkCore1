@@ -1,0 +1,60 @@
+====================
+🔴 Lab Incremental Job
+====================
+
+bash
+mysql -uroot -pAditya908 -h database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com
+
+create database if not exists LABUSER;
+use LABUSER;
+drop table if exists zeyojob;
+create table zeyojob (id int,name varchar(100),city varchar(100));
+insert into zeyojob values(1,'zeyo','chennai');
+insert into zeyojob values(2,'hema','hyderabad');
+insert into zeyojob values(3,'raji','chennai');
+insert into zeyojob values(4,'viru','delhi');
+select * from zeyojob;
+quit
+
+
+=============
+🔴 Password file creation
+=============
+
+cd
+echo -n Aditya908>passfile
+
+
+sqoop job --delete zjob
+sqoop job --create zjob -- import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password-file file:///home/LABUSER/passfile --table zeyojob --m 1 --target-dir /user/LABUSER/jobimport --incremental append --check-column id --last-value 0
+
+
+sqoop job --exec zjob
+
+hadoop fs -ls /user/LABUSER/jobimport
+hadoop fs -cat /user/LABUSER/jobimport/part-m-00000
+
+
+========
+🔴 Add 2 more records in SQL
+==========
+
+
+mysql -uroot -pAditya908 -h database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com
+create database if not exists LABUSER;
+use LABUSER;
+insert into zeyojob values(5,'ramu','chennai');
+insert into zeyojob values(6,'vasu','delhi');
+select * from zeyojob;
+quit
+
+
+========
+🔴 execute job
+========
+
+
+sqoop job --exec zjob
+
+hadoop fs -ls /user/LABUSER/jobimport
+hadoop fs -cat /user/LABUSER/jobimport/part-m-00001
