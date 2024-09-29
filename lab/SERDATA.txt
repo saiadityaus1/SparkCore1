@@ -23,9 +23,6 @@ quit
 🔴sqoop import with ser data
 ====================
 
-quit
-
-
 
 sqoop import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table cust --m 1 --target-dir /user/LABUSER/pardir --as-parquetfile
 
