@@ -1,0 +1,37 @@
+=======================
+🔴 Lab avro
+=======================
+
+mysql -uroot -pAditya908 -h database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com
+
+create database if not exists LABUSER;
+use LABUSER;
+drop table cust;
+create table cust(id int,name varchar(100));
+insert into cust value(1,'zeyo');
+insert into cust value(2,'analytics');
+select * from cust;
+
+=======================
+🔴quit from mysql
+=======================
+
+
+quit;
+
+
+=======================
+🔴Sqoop import as avro
+=======================
+
+sqoop import -Dmapreduce.job.user.classpath.first=true --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908  --table cust --m 1  --delete-target-dir --target-dir /user/LABUSER/adir --as-avrodatafile
+
+
+
+=======================
+🔴Validate the data
+=======================
+
+hadoop   fs    -ls   /user/LABUSER/adir
+
+hadoop   fs    -cat   /user/LABUSER/adir/part-m-00000
