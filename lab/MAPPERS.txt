@@ -1,0 +1,66 @@
+==================
+🔴 Lab Folks
+==================
+
+mysql --host=database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com --user=root --password=Aditya908
+create database LABUSER;
+use LABUSER;
+
+drop table if exists mtab;
+create table mtab(id int,name varchar(100),amount int);
+insert into mtab values(1,'zeyo',40);
+insert into mtab values(2,'vasu',50);
+insert into mtab values(3,'rani',70);
+insert into mtab values(4,'vani',40);
+insert into mtab values(5,'hema',50);
+insert into mtab values(6,'hari',70);
+insert into mtab values(7,'raki',40);
+insert into mtab values(8,'vira',50);
+insert into mtab values(9,'rupa',70);
+insert into mtab values(10,'Siji',40);
+insert into mtab values(11,'rapo',50);
+insert into mtab values(12,'visu',70);
+select * from mtab;
+quit
+
+
+===============
+🔴1 Mapper
+===============
+
+
+
+sqoop import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table mtab --m 1 --delete-target-dir --target-dir /user/LABUSER/mdata1
+
+hadoop fs -ls /user/LABUSER/mdata1/ 
+hadoop fs -cat  /user/LABUSER/mdata1/part-m-00000 
+
+
+
+===============
+🔴2 Mapper
+===============
+
+
+
+sqoop import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table mtab --m 2 --split-by id --delete-target-dir --target-dir /user/LABUSER/mdata2
+
+hadoop fs -ls /user/LABUSER/mdata2/ 
+hadoop fs -cat  /user/LABUSER/mdata2/part-m-00000 
+hadoop fs -cat  /user/LABUSER/mdata2/part-m-00001
+
+
+
+
+===============
+🔴 Mapper 4 /NO MAPPERS
+===============
+
+
+sqoop import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --table mtab   --split-by id --delete-target-dir --target-dir /user/LABUSER/mdata4
+
+hadoop fs -ls /user/LABUSER/mdata4/ 
+hadoop fs -cat  /user/LABUSER/mdata4/part-m-00000 
+hadoop fs -cat  /user/LABUSER/mdata4/part-m-00001
+hadoop fs -cat  /user/LABUSER/mdata4/part-m-00002
+hadoop fs -cat  /user/LABUSER/mdata4/part-m-00003
