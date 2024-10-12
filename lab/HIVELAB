@@ -1,0 +1,11 @@
+🔴 LAB FOLKS
+=============
+
+hive -e "set hive.metastore.warehouse.dir=/user/LABUSER/warehouse;create database if not exists LABUSER;use LABUSER;drop table if exists otab;create table otab(id int);insert into otab values(1000);select * from otab;"
+
+
+
+hadoop   fs   -ls    /user/LABUSER/warehouse
+hadoop   fs   -ls    /user/LABUSER/warehouse/LABUSER.db
+hadoop   fs   -ls    /user/LABUSER/warehouse/LABUSER.db/otab
+hadoop   fs   -cat   /user/LABUSER/warehouse/LABUSER.db/otab/000000_0
