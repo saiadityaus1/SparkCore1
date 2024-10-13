@@ -1,0 +1,14 @@
+🔴Lab folks
+======================
+
+cd
+echo 1,zeyo,40 > zfile
+echo 2,ravi,70 >> zfile
+echo 3,rani,70 >> zfile
+
+
+hadoop   fs   -put   /home/LABUSER/zfile  /user/LABUSER/
+
+hive -e "SET hive.metastore.warehouse.dir = /user/LABUSER/warehouse;drop database if exists LABUSER cascade;create database LABUSER;use LABUSER;create table htab(id int,name string,amt int) row format delimited fields terminated by ',';load data inpath '/user/LABUSER/zfile'  into table htab;select * from htab;select * from htab where id > 1"
+
+hadoop  fs   -ls   /user/LABUSER/warehouse/LABUSER.db/htab
