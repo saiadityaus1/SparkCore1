@@ -1,0 +1,15 @@
+🔴 Lab folks Location
+======================
+
+cd
+echo 1,zeyo,40 > zfile
+echo 2,ravi,70 >> zfile
+echo 3,rani,70 >> zfile
+
+
+hadoop  fs   -mkdir  /user/LABUSER/ddir
+
+hadoop  fs   -put   /home/LABUSER/zfile  /user/LABUSER/ddir/
+
+
+hive -e "SET hive.metastore.warehouse.dir = /user/LABUSER/warehouse;drop database if exists LABUSER cascade;create database LABUSER;use LABUSER;create table ltab(id int,name string,amt int) row format delimited fields terminated by ',' location '/user/LABUSER/ddir/';select * from ltab;"
