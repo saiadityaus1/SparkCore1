@@ -1,0 +1,19 @@
+🔴 *LAB Types of Tables*
+===============
+
+
+cd
+echo 1,sai>zfile
+echo 2,vas>>zfile
+
+hadoop   fs    -mkdir     /user/LABUSER/mdir
+hadoop   fs    -mkdir     /user/LABUSER/edir
+
+hadoop   fs    -put    zfile   /user/LABUSER/mdir
+hadoop   fs    -put    zfile   /user/LABUSER/edir
+
+hive -e "SET hive.metastore.warehouse.dir = /user/LABUSER/warehouse;drop database if exists LABUSER cascade;create database if not exists LABUSER;use LABUSER;create table mtab(id int,name string) row format delimited fields terminated by ',' location '/user/LABUSER/mdir';create external table etab(id int,name string) row format delimited fields terminated by ',' location '/user/LABUSER/edir';select * from mtab;select * from etab;describe formatted mtab;describe formatted etab;drop table mtab;drop table etab;"
+
+
+
+hadoop    fs   -ls   /user/LABUSER;
