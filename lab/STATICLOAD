@@ -1,0 +1,25 @@
+Static partitions Lab folks
+
+========== 
+🔴data creation 
+========== 
+
+
+cd
+echo 1,Sai,I>INDTxns
+echo 2,zeyo,I>>INDTxns
+echo 3,Hema,K>UKTxns
+echo 4,Gomathi,K>>UKTxns
+echo 5,Jai,S>USTxns
+echo 6,Swathi,S>>USTxns
+
+hadoop fs -mkdir /user/LABUSER/partdir
+
+========== ========== 
+🔴 hive 
+========== ========== 
+
+hive -e"set hive.metastore.warehouse.dir=/user/LABUSER/warehouse;create database if not exists LABUSER;use LABUSER;drop table if exists parttab;create table parttab(id int,name string,chk string) partitioned by (country string) row format delimited fields terminated by ',' location '/user/LABUSER/partdir';load data local inpath '/home/LABUSER/INDTxns' into table parttab partition (country='INDIA');load data local inpath '/home/LABUSER/USTxns' into table parttab partition (country='USA');load data local inpath '/home/LABUSER/UKTxns' into table parttab partition (country='UK');"
+
+
+hadoop    fs   -ls       /user/LABUSER/partdir
