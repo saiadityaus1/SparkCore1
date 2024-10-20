@@ -1,0 +1,28 @@
+Lab Dynamic
+====================
+
+
+
+===== 
+data creation 
+========
+
+cd
+echo 1,Sai,I,IND>allc
+echo 2,zeyo,I,IND>>allc
+echo 3,Hema,K,UK>>allc
+echo 4,Gomathi,K,UK>>allc
+echo 5,Jai,S,US>>allc
+echo 6,Swathi,S,US>>allc
+
+
+hadoop fs -rmr /user/LABUSER/helpdir1
+hadoop fs -mkdir /user/LABUSER/helpdir1
+hadoop fs -rmr /user/LABUSER/dyndir
+hadoop fs -mkdir /user/LABUSER/dyndir
+
+
+hive -e "set hive.metastore.warehouse.dir=/user/LABUSER/warehouse;create database if not exists LABUSER;use LABUSER;drop table if exists helptab;create table helptab(id int,name string,chk string,country string) row format delimited fields terminated by ',' location '/user/LABUSER/helpdir1';load data local inpath '/home/LABUSER/allc' into table helptab;create table dyntab(id int,name string,chk string) partitioned by (country string) row format delimited fields terminated by ',' location '/user/LABUSER/dyndir';set hive.exec.dynamic.partition.mode=nonstrict;insert into dyntab partition(country) select id,name,chk,country from helptab;"
+
+
+hadoop fs -ls /user/LABUSER/dyndir/
