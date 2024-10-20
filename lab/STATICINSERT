@@ -1,0 +1,28 @@
+Static insert
+====================
+
+Lab folks
+
+===== 
+data creation 
+========
+
+cd
+echo 1,Sai,I,IND>allc
+echo 2,zeyo,I,IND>>allc
+echo 3,Hema,K,UK>>allc
+echo 4,Gomathi,K,UK>>allc
+echo 5,Jai,S,US>>allc
+echo 6,Swathi,S,US>>allc
+
+
+hadoop fs -rmr /user/LABUSER/helpdir
+hadoop fs -mkdir /user/LABUSER/helpdir
+hadoop fs -rmr /user/LABUSER/partsdir
+hadoop fs -mkdir /user/LABUSER/partsdir
+
+
+
+hive -e "set hive.metastore.warehouse.dir=/user/LABUSER/warehouse;create database if not exists LABUSER;use LABUSER;drop table if exists helptab;create table helptab(id int,name string,chk string,country string) row format delimited fields terminated by ',' location '/user/LABUSER/helpdir';load data local inpath '/home/LABUSER/allc' into table helptab;drop table if exists sitab;create table sitab(id int,name string,chk string) partitioned by (country string) row format delimited fields terminated by ',' location '/user/LABUSER/sidir';insert into sitab partition(country='INDIA') select id,name,chk from helptab where country='IND';"
+
+hadoop fs -ls /user/LABUSER/sidir/
