@@ -1,0 +1,58 @@
+=======================
+🔴Lab avro
+=======================
+
+mysql -u hr_user -h ms.itversity.com -pitversity
+
+use hr_export;
+
+
+create table atab_LABUSER(id int,name varchar(100),amount int);
+insert into atab_LABUSER values(1,'rajesh',40);
+insert into atab_LABUSER values(2,'vishnu',10);
+insert into atab_LABUSER values(3,'rani',60);
+select * from atab_LABUSER;
+
+quit;
+
+================================================
+🔴sQOOP Import🔴
+
+sqoop import -Dmapreduce.job.user.classpath.first=true --connect jdbc:mysql://ms.itversity.com/hr_export --username hr_user --password itversity  --table atab_LABUSER --m 1  --delete-target-dir --target-dir /user/LABUSER/adir --as-avrodatafile
+
+
+================================================
+🔴Hive avro🔴
+
+hive -e "set hive.metastore.warehouse.dir=/user/LABUSER/warehouse;create database if not exists LABUSER;use LABUSER;create table atab(id int,name string,amount int) stored as avro LOCATION '/user/LABUSER/adir';select * from atab"
+
+
+
+================================================
+🔴Recreate Table🔴
+
+mysql -u hr_user -h ms.itversity.com -pitversity
+
+use hr_export;
+
+create table atab1_LABUSER(id int,amount int);
+insert into atab1_LABUSER values(1,40);
+insert into atab1_LABUSER values(2,10);
+insert into atab1_LABUSER values(3,60);
+insert into atab1_LABUSER values(4,90);
+insert into atab1_LABUSER values(5,20);
+select * from atab1_LABUSER;
+quit;
+
+
+================================================
+🔴sQOOP Import🔴
+
+sqoop import -Dmapreduce.job.user.classpath.first=true --connect jdbc:mysql://ms.itversity.com/hr_export --username hr_user --password itversity  --table atab1_LABUSER --m 1 --target-dir /user/LABUSER/adir --as-avrodatafile --incremental append --check-column id --last-value 3
+
+================================================
+🔴Hive table🔴
+
+hive -e "set hive.metastore.warehouse.dir=/user/LABUSER/warehouse;select * from LABUSER.atab"
+
+
