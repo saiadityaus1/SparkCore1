@@ -1,0 +1,49 @@
+🔴 Lab Folks
+
+===============
+🔴 Go to Mysql 
+===============
+
+
+mysql -u nyse_user -h ms.itversity.com -pitversity
+
+use nyse_export;
+
+create table customer_src_LABUSER(id int(10),username varchar(100),sub_port varchar(100),host varchar(100),date_time varchar(100),hit_count_val_1 varchar(100),hit_count_val_2 varchar(100),hit_count_val_3 varchar(100),timezone varchar(100),method varchar(100),procedure1 varchar(100),value varchar(100),sub_product varchar(100),web_info varchar(100),status_code varchar(100));
+
+
+insert into customer_src_LABUSER select * From customer_total where id>=301 and id<=330;
+
+quit
+=============================
+🔴  Edge Node
+=============================
+rm -rf /home/LABUSER/avsrcdir
+mkdir /home/LABUSER/avsrcdir
+cd /home/LABUSER/avsrcdir
+echo -n itversity>/home/LABUSER/passfile
+
+sqoop import -Dmapreduce.job.user.classpath.first=true --connect jdbc:mysql://ms.itversity.com/nyse_export --username nyse_user --password-file file:///home/LABUSER/passfile -m 1 --table customer_src_LABUSER --target-dir /user/LABUSER/customer_stage_loc --incremental append --check-column id --last-value 0 --as-avrodatafile
+
+
+hadoop fs -mkdir /user/LABUSER/avscdirpro
+hadoop fs -put /home/LABUSER/avsrcdir/customer_src_LABUSER.avsc /user/LABUSER/avscdirpro
+
+
+====================================
+🔴  Hive shell
+====================================
+
+hive
+SET hive.metastore.warehouse.dir = /user/LABUSER/warehouse;
+create database prodb_LABUSER;
+use prodb_LABUSER;
+
+create  table customer_src   ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO LOCATION '/user/LABUSER/customer_stage_loc'  TBLPROPERTIES ('avro.schema.url'='/user/LABUSER/avscdirpro/customer_src_LABUSER.avsc');
+
+select * from customer_src;   === U will see the data
+
+
+create external table customer_target_tab partitioned by (current_day string,year string,month string,day string) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO LOCATION '/user/LABUSER/customer_target_tab'  TBLPROPERTIES ('avro.schema.url'='/user/LABUSER/avscdirpro/customer_src_LABUSER.avsc');
+
+select * from customer_target_tab;    ==== U will not see the data
