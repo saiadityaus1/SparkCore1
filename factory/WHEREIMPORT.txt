@@ -1,9 +1,10 @@
+
 =================
 🔴 *Lab where imports*
 =================
 
 bash
-mysql -uroot -pAditya908 -h database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com
+mysql -uroot -pAditya908 -h bhuvanadb.c984uw2uav5q.ap-south-1.rds.amazonaws.com
 
 create database if not exists LABUSER;
 use LABUSER;
@@ -23,7 +24,7 @@ quit;
 🔴 *Execute sqoop command with Chennai city*
 ===================
 
-sqoop import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --m 1 --table zeyotab --delete-target-dir --target-dir /user/LABUSER/chnimport --where "city='chennai'"
+sqoop import --connect jdbc:mysql://bhuvanadb.c984uw2uav5q.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --m 1 --table zeyotab --delete-target-dir --target-dir /user/LABUSER/chnimport --where "city='chennai'"
 
 
 
