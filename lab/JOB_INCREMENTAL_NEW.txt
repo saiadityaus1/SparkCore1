@@ -22,9 +22,9 @@ select * from zeyojob;
 quit
 
 
-=============
-🔴 Password file creation
-=============
+==========================
+🔴 SQOOP JOB CREATION WITH PASSWORD FILE
+==========================
 
 cd
 echo -n Aditya908>passfile
@@ -33,6 +33,10 @@ echo -n Aditya908>passfile
 sqoop job --delete zjob
 
 sqoop job --create zjob -- import --connect jdbc:mysql://bhuvanadb.c984uw2uav5q.ap-south-1.rds.amazonaws.com/LABUSER --username root --password-file file:///home/LABUSER/passfile --table zeyojob --m 1 --target-dir /user/LABUSER/jobimport --incremental append --check-column id --last-value 0
+
+==========================
+🔴 Execute the Job and Validate
+==========================
 
 
 sqoop job --exec zjob
@@ -60,9 +64,9 @@ select * from zeyojob;
 quit
 
 
-========
-🔴 execute job
-========
+========================
+🔴 execute job One more time
+========================
 
 
 sqoop job --exec zjob
