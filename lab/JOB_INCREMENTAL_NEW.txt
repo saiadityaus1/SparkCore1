@@ -3,7 +3,7 @@
 ====================
 
 bash
-mysql -uroot -pAditya908 -h database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com
+mysql -uroot -pAditya908 -h bhuvanadb.c984uw2uav5q.ap-south-1.rds.amazonaws.com
 
 create database if not exists LABUSER;
 use LABUSER;
@@ -32,7 +32,7 @@ echo -n Aditya908>passfile
 
 sqoop job --delete zjob
 
-sqoop job --create zjob -- import --connect jdbc:mysql://database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com/LABUSER --username root --password-file file:///home/LABUSER/passfile --table zeyojob --m 1 --target-dir /user/LABUSER/jobimport --incremental append --check-column id --last-value 0
+sqoop job --create zjob -- import --connect jdbc:mysql://bhuvanadb.c984uw2uav5q.ap-south-1.rds.amazonaws.com/LABUSER --username root --password-file file:///home/LABUSER/passfile --table zeyojob --m 1 --target-dir /user/LABUSER/jobimport --incremental append --check-column id --last-value 0
 
 
 sqoop job --exec zjob
@@ -46,7 +46,7 @@ hadoop fs -cat /user/LABUSER/jobimport/part-m-00000
 ==========
 
 
-mysql -uroot -pAditya908 -h database-1.cngy00awy7ka.ap-south-1.rds.amazonaws.com
+mysql -uroot -pAditya908 -h bhuvanadb.c984uw2uav5q.ap-south-1.rds.amazonaws.com
 create database if not exists LABUSER;
 use LABUSER;
 insert into zeyojob values(5,'ramu','chennai');
