@@ -1,0 +1,124 @@
+🔴 Customer_total creation command
+
+mysql -uroot -pcloudera
+
+create database if not exists prodb;
+
+use prodb;
+
+drop table customer_total;
+
+create table customer_total(id int(10),username varchar(100),sub_port varchar(100),host varchar(100),date_time varchar(100),hit_count_val_1 varchar(100),hit_count_val_2 varchar(100),hit_count_val_3 varchar(100),timezone varchar(100),method varchar(100),procedure1 varchar(100),value varchar(100),sub_product varchar(100),web_info varchar(100),status_code varchar(100));
+
+insert into customer_total values('301','beautifulbear','04298','18.75.325.301','04/Sep/2014:10:34:12 -0500','10','34','12','-0500','GET','/download','0','/download','Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.2; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)','100');
+
+insert into customer_total values('302','beautifulbear','07300','326.8.368.607','20/Dec/2014:08:35:30 -0500','08','35','30','-0500','GET','/home','0','-','Mozilla/5.0 (Windows; U; Windows NT 6.1; pt-BR; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3','100');
+
+insert into customer_total values('303','beautifulbear','09707','676.624.18.07','07/Sep/2014:15:54:58 -0500','15','54','58','-0500','GET','/product/product6','0','/product/demos/product2','MSR-ISRCCrawler','100');
+
+insert into customer_total values('304','beautifulbear','04319','55.615.51.35','24/Dec/2014:11:13:00 -0500','11','13','00','-0500','GET','/feeds/press','0','-','Apple-PubSub/65.12.1','100');
+
+insert into customer_total values('305','beautifulbear','07480','361.631.17.30','12/Sep/2014:07:42:58 -0500','07','42','58','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('306','beautifulbear','06211','363.12.302.642','27/Dec/2014:15:09:49 -0500','15','09','49','-0500','GET','/products/demos','0','/products/demos','Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.1) Gecko/20090624 Firefox/3.5','100');
+
+insert into customer_total values('307','beautifulbear','06865','664.687.377.602','12/Sep/2014:18:09:29 -0500','18','09','29','-0500','GET','/download/download3.zip','0','/download','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; InfoPath.2; Creative AutoUpdate v1.10.10; AskTB5.5)','100');
+
+insert into customer_total values('308','beautifulbear','01759','668.686.42.61','28/Dec/2014:00:32:33 -0500','00','32','33','-0500','GET','/partners','0','/partners','Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.2; MS-RTC LM 8; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)','100');
+
+insert into customer_total values('309','beautifulbear','01701','14.323.74.653','13/Sep/2014:02:29:30 -0500','02','29','30','-0500','GET','/demo','0','-','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('310','beautifulbear','43137','52.43.672.362','04/Jan/2014:12:12:06 -0500','12','12','06','-0500','GET','/docs/doc2.pdf','0','/docs/doc2.pdf','Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 ( .NET CLR 3.5.30729)','100');
+
+insert into customer_total values('311','beautifulbear','04126','53.378.683.602','14/Sep/2014:13:11:32 -0500','13','11','32','-0500','GET','/feeds/press','0','/feeds/press','Mozilla/5.0 (Windows; U; Windows NT 6.0; fr; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 ( .NET CLR 3.5.30729)','100');
+
+insert into customer_total values('312','beautifulbear','32800','75.622.36.380','05/Jan/2014:09:12:28 -0500','09','12','28','-0500','GET','/products','0','/products','Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5 GTB5','100');
+
+insert into customer_total values('313','beautifulbear','02621','14.610.30.67','18/Sep/2014:08:54:30 -0500','08','54','30','-0500','GET','/product/product3','0','-','Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.2; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; InfoPath.1)','100');
+
+insert into customer_total values('314','beautifulbear','80516','680.330.387.7','05/Jan/2014:12:48:38 -0500','12','48','38','-0500','GET','/product/product3','0','/product/product3','Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322)','100');
+
+insert into customer_total values('315','beautifulbear','94600','361.631.17.30','20/Sep/2014:23:24:59 -0500','23','24','59','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('316','beautifulbear','08102','322.6.648.325','05/Jan/2014:14:05:22 -0500','14','05','22','-0500','GET','/download/download3.zip','0','/download/download3.zip','Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)','100');
+
+insert into customer_total values('317','beautifulbear','04731','87.86.81.40','21/Sep/2014:05:54:30 -0500','05','54','30','-0500','GET','/feeds/press','0','-','Mozilla/5.0 (Windows; U; Windows NT 6.1; it; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 (.NET CLR 3.5.30729)','100');
+
+insert into customer_total values('318','beautifulbear','06435','30.672.8.336','06/Jan/2014:20:01:36 -0500','20','01','36','-0500','GET','/home','0','/home','Jakarta Commons-HttpClient/3.0.1','100');
+
+insert into customer_total values('319','beautifulbear','06597','367.34.686.631','22/Sep/2014:23:09:30 -0500','23','09','30','-0500','GET','/demo','0','-','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('320','beautifulbear','90110','322.6.648.325','06/Jan/2014:20:30:54 -0500','20','30','54','-0500','GET','/download/download3.zip','0','/download/download3.zip','Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)','100');
+
+insert into customer_total values('321','beautifulbear','61561','13.626.82.338','24/Sep/2014:19:11:38 -0500','19','11','38','-0500','GET','/product/product3','0','/product/product3','Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)','100');
+
+insert into customer_total values('322','beautifulbear','01794','650.47.72.628','06/Jan/2014:21:22:30 -0500','21','22','30','-0500','GET','/misc','0','-','Python-urllib/2.5','100');
+
+insert into customer_total values('323','beautifulbear','60546','41.631.382.601','25/Sep/2014:22:40:00 -0500','22','40','00','-0500','GET','/feeds/press','0','-','Apple-PubSub/65.12.1','100');
+
+insert into customer_total values('324','beautifulbear','04825','322.6.648.325','07/Jan/2014:06:32:49 -0500','06','32','49','-0500','GET','/download/download3.zip','0','/download/download3.zip','Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)','100');
+
+insert into customer_total values('325','beautifulbear','61449','361.54.46.628','27/Sep/2014:12:07:24 -0500','12','07','24','-0500','GET','/partners','0','/partners','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; Media Center PC 5.0)','100');
+
+insert into customer_total values('326','beautifulbear','40 53','322.6.648.325','07/Jan/2014:09:04:53 -0500','09','04','53','-0500','GET','/download/download3.zip','0','/download/download3.zip','Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)','100');
+
+insert into customer_total values('327','beautifulbear','09264','628.44.58.626','30/Oct/2014:07:26:30 -0500','07','26','30','-0500','GET','/feeds/press','0','-','Apple-PubSub/65.11','100');
+
+insert into customer_total values('328','beautifulbear','21605','322.6.648.325','08/Jan/2014:05:18:12 -0500','05','18','12','-0500','GET','/download/download3.zip','0','/download/download3.zip','Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)','100');
+
+insert into customer_total values('329','beautifulbear','89167','688.81.361.364','30/Oct/2014:18:34:01 -0500','18','34','01','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('330','beautifulbear','05075','10.46.36.375','10/Jan/2014:03:24:31 -0500','03','24','31','-0500','GET','/services/training','0','/services/training','Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 (.NET CLR 3.5.30729)','100');
+
+insert into customer_total values('331','beautifulbear','06819','14.323.74.653','03/Nov/2014:14:17:59 -0500','14','17','59','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('332','beautifulbear','06091','73.620.65.307','11/Jan/2014:10:41:25 -0500','10','41','25','-0500','GET','/about/customers','0','/team','Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.9) Gecko/20100315 (CK-IBM) Firefox/3.5.9 (.NET CLR 3.5.30729)','100');
+
+insert into customer_total values('333','beautifulbear','04091','326.04.648.05','06/Nov/2014:23:30:40 -0500','23','30','40','-0500','GET','/home','0','/home','Jakarta Commons-HttpClient/3.0.1','100');
+
+insert into customer_total values('334','beautifulbear','01732','14.323.74.653','14/Jan/2014:08:56:29 -0500','08','56','29','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('335','beautifulbear','68 66','322.1.620.601','08/Nov/2014:20:27:39 -0500','20','27','39','-0500','GET','/download','0','/download','Mozilla/5.0 (Windows; U; Windows NT 5.1; es-ES; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 (.NET CLR 3.5.30729)','100');
+
+insert into customer_total values('336','beautifulbear','08144','43.681.68.74','16/Jan/2014:20:54:58 -0500','20','54','58','-0500','GET','/product/product6','0','/product/product6','Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 ( .NET CLR 3.5.30729)','100');
+
+insert into customer_total values('337','beautifulbear','67819','651.65.03.77','15/Nov/2014:01:27:41 -0500','01','27','41','-0500','GET','/buy','0','/products','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; InfoPath.1)','100');
+
+insert into customer_total values('338','beautifulbear','08709','638.616.303.80','17/Jan/2014:11:12:42 -0500','11','12','42','-0500','GET','/product/product1','0','/product/product1','Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.10) Gecko/2009042523 Ubuntu/9.04 (jaunty) Firefox/3.0.10','100');
+
+insert into customer_total values('339','beautifulbear','61390','361.631.17.30','15/Nov/2014:19:20:02 -0500','19','20','02','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('340','beautifulbear','01779','14.323.74.653','18/Jan/2014:11:34:00 -0500','11','34','00','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('341','beautifulbear','08112','668.53.638.303','21/Nov/2014:19:35:46 -0500','19','35','46','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('342','beautifulbear','39255','647.3.628.624','19/Jan/2014:20:25:06 -0500','20','25','06','-0500','GET','/product/demos/product2','0','/product/demos/product2','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; GTB6.3; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; InfoPath.1)','100');
+
+insert into customer_total values('343','beautifulbear','82 77','636.306.78.11','22/Nov/2014:01:30:26 -0500','01','30','26','-0500','GET','/download/download7.zip','0','/download/download7.zip','Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 (.NET CLR 3.5.30729)','100');
+
+insert into customer_total values('344','beautifulbear','09640','664.684.605.672','20/Jan/2014:20:30:30 -0500','20','30','30','-0500','GET','/product/product12','0','-','Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.0.19) Gecko/2010031422 Firefox/3.0.19','100');
+
+insert into customer_total values('345','beautifulbear','09036','11.673.336.328','22/Nov/2014:07:01:00 -0500','07','01','00','-0500','GET','/demo','0','-','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('346','beautifulbear','04877','324.01.320.681','21/Jan/2014:23:00:30 -0500','23','00','30','-0500','GET','/news','0','-','msnbot/2.0b (+http://search.msn.com/msnbot.htm)','100');
+
+insert into customer_total values('347','beautifulbear','07784','668.53.638.303','23/Nov/2014:23:52:34 -0500','23','52','34','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('348','beautifulbear','78153','687.642.616.333','25/Jan/2014:14:16:00 -0500','14','16','00','-0500','GET','/products','0','-','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.04506.648; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; MS-RTC LM 8)','100');
+
+insert into customer_total values('349','beautifulbear','01735','363.378.632.375','29/Nov/2014:19:02:29 -0500','19','02','29','-0500','GET','/product/product1','0','/products/demos','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; GTB6.4)','100');
+
+insert into customer_total values('350','beautifulbear','38760','53.667.16.82','25/Jan/2014:17:41:20 -0500','17','41','20','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('351','beautifulbear','41364','327.648.4.66','29/Nov/2014:20:12:15 -0500','20','12','15','-0500','GET','/download/download1.zip','0','/product/product6','Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.1) Gecko/20090715 Firefox/3.5.1','100');
+
+insert into customer_total values('352','beautifulbear','51590','361.631.17.30','26/Jan/2014:11:12:29 -0500','11','12','29','-0500','GET','/demo','0','/demo','Jakarta Commons-HttpClient/3.0-rc4','100');
+
+insert into customer_total values('353','beautifulbear','08188','57.306.688.601','01/Dec/2014:17:40:06 -0500','17','40','06','-0500','GET','/download/download1.zip','0','/docs/doc8.pdf','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; GTB0.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; .NET CLR 3.5.30729; .NET CLR 3.0.30729; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)','100');
+
+select * from customer_total;
+
+quit;
+
+
+
