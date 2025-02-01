@@ -36,7 +36,7 @@ python_path = sys.executable
 os.environ['PYSPARK_PYTHON'] = python_path
 os.environ['HADOOP_HOME'] ="hadoop"
 os.environ['JAVA_HOME'] = r''
-######################################################
+######################🔴🔴🔴################################
 
 #os.environ['PYSPARK_SUBMIT_ARGS'] = '--packages com.datastax.spark:spark-cassandra-connector_2.12:3.5.1 pyspark-shell'
 #os.environ['PYSPARK_SUBMIT_ARGS'] = '--packages org.apache.spark:spark-avro_2.12:3.5.4 pyspark-shell'
