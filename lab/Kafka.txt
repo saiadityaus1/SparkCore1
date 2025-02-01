@@ -1,0 +1,94 @@
+🔴FULL Kafka Handson STEPS
+
+Pre Requisite Java
+
+===================
+🔴 STEP 1
+===================
+
+DOWNLOAD ZOOKEEPER
+COPY TO A DRIVE Directly
+Extract it
+
+
+===================
+🔴 STEP 2
+===================
+
+DOWNLOAD Kafka
+COPY TO A DRIVE Directly
+Extract it
+
+
+===================
+🔴 STEP 3
+===================
+
+If any tmp folder we have in that Drive Delete it
+
+
+===================
+🔴 STEP 4
+===================
+
+Go inside extracted Zookeeper
+Go Inside Bin Folder
+Double click """zkServer""" (windows Command Script)
+Minimize the Black Box (Dont close it)
+
+
+
+===================
+🔴 STEP 5 -- Start Kafka
+===================
+
+Go inside Extracted Kafka Folder
+Open cmd in this Path and Execute below
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+
+===================
+🔴 STEP 6 --- Topic Creation
+===================
+
+Go inside extracted Kafka Folder
+Go Inside bin folder
+Go Inside windows Folder
+Open cmd in this path and Execute Below Command
+
+kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic deepseek
+
+
+===================
+🔴 STEP 7 ---Producer Console Open
+===================
+
+Go inside extracted Kafka Folder
+Go inside Bin Folder
+Go Inside windows Folder
+Open cmd in this path and execute below command
+
+kafka-console-producer.bat --broker-list localhost:9092 --topic deepseek
+
+
+===================
+🔴 STEP 8 ---Consumer Console Open
+===================
+
+Go inside extracted Kafka Folder
+Go inside Bin folder
+Go inside windows Folder
+Open cmd in this path and execute below command
+
+kafka-console-consumer.bat --zookeeper localhost:2181 --topic deepseek
+
+
+
+===================
+🔴 STEP 9 Data Push
+===================
+
+
+Push data in Producer console  -- check in consumer console
