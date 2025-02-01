@@ -1,0 +1,167 @@
+{
+    "results": [
+        {
+            "user": {
+                "gender": "male",
+                "name": {
+                    "title": "mr",
+                    "first": "felix",
+                    "last": "tremblay"
+                },
+                "location": {
+                    "street": "8621 grand ave",
+                    "city": "winfield",
+                    "state": "northwest territories",
+                    "zip": 83044
+                },
+                "email": "felix.tremblay@example.com",
+                "username": "bluegoose796",
+                "password": "wednesda",
+                "salt": "RLrdnisj",
+                "md5": "939bf996bf7ac4386d24d4435c24f02d",
+                "sha1": "01d183dc7bfb0c4e690f51d4d7784e2acf4e805c",
+                "sha256": "201c7e37d66094ace7438ade9e14e4798245dcb92134b3320992ebb1615abb1b",
+                "registered": 969746298,
+                "dob": 974060914,
+                "phone": "215-140-0439",
+                "cell": "347-823-3027",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/men/53.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/men/53.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/53.jpg"
+                }
+            }
+        },
+        {
+            "user": {
+                "gender": "female",
+                "name": {
+                    "title": "mrs",
+                    "first": "sarah",
+                    "last": "ginnish"
+                },
+                "location": {
+                    "street": "6716 elgin st",
+                    "city": "hampstead",
+                    "state": "alberta",
+                    "zip": 59421
+                },
+                "email": "sarah.ginnish@example.com",
+                "username": "biggorilla693",
+                "password": "shanna",
+                "salt": "4UtbneHC",
+                "md5": "5079acf38468a6e10005698ebbe26677",
+                "sha1": "66b577451bc53e91fcc4043e7c99672703e5db04",
+                "sha256": "98b2185a1650a9642b863d726e0ac67fb8dab6a5ec6145e21648cb05b3774a32",
+                "registered": 1313926239,
+                "dob": 508505080,
+                "phone": "786-893-0264",
+                "cell": "544-762-4288",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/women/65.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/women/65.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/65.jpg"
+                }
+            }
+        },
+        {
+            "user": {
+                "gender": "male",
+                "name": {
+                    "title": "mr",
+                    "first": "jacob",
+                    "last": "denys"
+                },
+                "location": {
+                    "street": "3114 pierre ave",
+                    "city": "cornwall",
+                    "state": "québec",
+                    "zip": 30308
+                },
+                "email": "jacob.denys@example.com",
+                "username": "redgorilla562",
+                "password": "lewis",
+                "salt": "tPw5dFer",
+                "md5": "0718f201ebadc130cdecec4d175cd78c",
+                "sha1": "1cd07631d48d0fea096d51aa4ac219d1bd76c043",
+                "sha256": "9db9ecf9047090fe2f3aaf3665695f1d92bf965415e15cc5bc88d81454bc00ee",
+                "registered": 1120070380,
+                "dob": 1142285264,
+                "phone": "341-637-3160",
+                "cell": "360-191-6230",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/men/97.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/men/97.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/97.jpg"
+                }
+            }
+        },
+        {
+            "user": {
+                "gender": "male",
+                "name": {
+                    "title": "mr",
+                    "first": "alexis",
+                    "last": "wilson"
+                },
+                "location": {
+                    "street": "7614 cedar st",
+                    "city": "woodstock",
+                    "state": "northwest territories",
+                    "zip": 98360
+                },
+                "email": "alexis.wilson@example.com",
+                "username": "organicmeercat248",
+                "password": "spiderman",
+                "salt": "ceuIFn5N",
+                "md5": "302eb2d01ded830d47d5ef9ea3cd4355",
+                "sha1": "5ece5c4a68423826d3397f525864fb35beff91b8",
+                "sha256": "2562799ab777863bd95cc890d8c196003386ea0483595961de754f0778685429",
+                "registered": 981378607,
+                "dob": 379193356,
+                "phone": "177-621-9820",
+                "cell": "550-708-0053",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/men/8.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/men/8.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/8.jpg"
+                }
+            }
+        },
+        {
+            "user": {
+                "gender": "male",
+                "name": {
+                    "title": "mr",
+                    "first": "dominic",
+                    "last": "campbell"
+                },
+                "location": {
+                    "street": "3656 3rd st",
+                    "city": "alma",
+                    "state": "yukon",
+                    "zip": 75876
+                },
+                "email": "dominic.campbell@example.com",
+                "username": "lazyostrich563",
+                "password": "fruit",
+                "salt": "NcOSG2FY",
+                "md5": "856400892d5d36a46b5afd81f12b0678",
+                "sha1": "365e76168131cb72ab09c60f681dd44b21332b1d",
+                "sha256": "78e733ebfb4a21bcd1fa3f3bb6f77959f053def72881eac9599331ea86b58fe6",
+                "registered": 1266292141,
+                "dob": 1193027812,
+                "phone": "834-960-5449",
+                "cell": "797-979-1855",
+                "picture": {
+                    "large": "https://randomuser.me/api/portraits/men/33.jpg",
+                    "medium": "https://randomuser.me/api/portraits/med/men/33.jpg",
+                    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/33.jpg"
+                }
+            }
+        }
+    ],
+    "nationality": "CA",
+    "seed": "bf74ea62329cd8b902",
+    "version": "0.8"
+}
