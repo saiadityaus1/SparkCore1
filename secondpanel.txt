@@ -1,0 +1,18 @@
+print("STARTED=============")
+
+lis = [1 , 2 , 3 , 4]
+print(lis)
+rddin = sc.parallelize(lis)
+
+print("===== RAW RDD LIST=====")
+print(rddin.collect())
+
+addrdd = rddin.map( lambda x : x + 2 )
+
+print("===== mulrdd RDD LIST=====")
+print(addrdd.collect())
+
+mulrdd = rddin.map( lambda x : x *  10 )
+
+print("===== mulrdd RDD LIST=====")
+print(mulrdd.collect())
