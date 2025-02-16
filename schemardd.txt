@@ -1,0 +1,34 @@
+# 🔴 STEP 1 -- READ THE FILE
+
+data = sc.textFile("dt.txt")
+print()
+print("===== RAW DATA====")
+data.foreach(print)
+
+
+# 🔴STEP 2 ----- SPLIT WITH COMMA (MAPSPLIT)
+
+mapsplit = data.map(lambda x : x.split(","))
+
+
+from collections import namedtuple
+
+# 🔴STEP 3 ---- DEFINE COLUMNS
+
+
+columns = namedtuple('columns',['tno','tdate','amount','category','product','mode'])
+
+
+# 🔴STEP 4 --- IMPOSE EACH DATA SPLIT TO THE COLUMNS
+
+
+schemardd = mapsplit.map(lambda x : columns(x[0],x[1],x[2],x[3],x[4],x[5]))
+
+
+
+# 🔴STEP 5 ---- FILTER  REQUIRED PRODUCT COLUMN
+
+filterrdd = schemardd.filter(lambda x : 'Gymnastics' in x.product)
+print()
+print("===== filterrdd DATA====")
+filterrdd.foreach(print)
