@@ -1,0 +1,27 @@
+🔴 *LAB FOLKS*
+
+🔴 FIRST --- IF ALREADY EXECUTED LEAVE IT GO TO TASK
+
+mkdir    /home/LABUSER/edir
+
+echo    zeyobron  >   /home/LABUSER/edir/zfile
+
+cat     /home/LABUSER/edir/zfile
+
+hadoop     fs    -mkdir     /user/LABUSER/hdir
+
+hadoop     fs    -put     /home/LABUSER/edir/zfile     /user/LABUSER/hdir/
+
+hadoop     fs    -ls      /user/LABUSER/hdir
+
+hadoop     fs    -cat     /user/LABUSER/hdir/zfile
+
+
+
+🔴 *TASK* ---------
+
+mkdir   /home/LABUSER/edir1
+
+hadoop    fs      -get     /user/LABUSER/hdir/zfile 	/home/LABUSER/edir1
+
+cat  /home/LABUSER/edir1/zfile
