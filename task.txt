@@ -26,3 +26,4 @@ mkdir   /home/cloudera/edir1
 
 hadoop    fs      -get     /user/cloudera/hdir/zfile 	/home/cloudera/edir1
 
+cat  /home/cloudera/edir1
