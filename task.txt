@@ -1,0 +1,28 @@
+🔴 *CLOUDERA FOLKS*
+
+🔴 FIRST --- IF ALREADY EXECUTED LEAVE IT GO TO TASK
+
+hadoop    dfsadmin     -safemode      leave
+
+mkdir    /home/cloudera/edir
+
+echo    zeyobron  >   /home/cloudera/edir/zfile
+
+cat     /home/cloudera/edir/zfile
+
+hadoop     fs    -mkdir     /user/cloudera/hdir
+
+hadoop     fs    -put     /home/cloudera/edir/zfile     /user/cloudera/hdir/
+
+hadoop     fs    -ls      /user/cloudera/hdir
+
+hadoop     fs    -cat     /user/cloudera/hdir/zfile
+
+
+
+🔴 *TASK* ---------
+
+mkdir   /home/cloudera/edir1
+
+hadoop    fs      -get     /user/cloudera/hdir/zfile 	/home/cloudera/edir1
+
