@@ -1,0 +1,45 @@
+🔴 *WHERE -- CLOUDERA*
+
+
+=================
+🔴 *Cloudera where AND COLUMNS imports*
+=================
+
+hadoop dfsadmin -safemode leave
+
+
+===================
+🔴 *Create  the data and quit*
+====================
+
+
+mysql -uroot -pcloudera
+
+create database if not exists zeyodb;
+use zeyodb;
+drop table if exists zeyotab;
+create table zeyotab(id int,name varchar(100),city varchar(100));
+insert into zeyotab values(1,'sai','chennai');
+insert into zeyotab values(2,'ravi','hyderabad');
+insert into zeyotab values(3,'rani','chennai');
+insert into zeyotab values(4,'vasu','bangalore');
+
+select * from zeyotab;
+
+===================
+🔴quit
+===================
+
+quit;
+===================
+🔴 *Execute sqoop command with Chennai city*
+===================
+
+sqoop import --connect jdbc:mysql://localhost/zeyodb --username root --password cloudera --m 1 --table zeyotab --delete-target-dir --target-dir /user/cloudera/chnimportcolumn --where "city='chennai'" --columns id,city
+
+===================
+🔴 *Validate the data*
+===================
+
+hadoop   fs   -ls     /user/cloudera/chnimportcolumn
+hadoop   fs   -cat    /user/cloudera/chnimportcolumn/part-m-00000
