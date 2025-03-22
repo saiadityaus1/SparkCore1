@@ -1,0 +1,69 @@
+🔴 *Cloudera first import*
+
+
+=================
+🔴 *Cloudera safe mode leave*
+=================
+
+hadoop dfsadmin -safemode leave
+
+===================
+🔴 *Go to mysql*
+===================
+
+mysql  -uroot  -pcloudera
+
+===================
+🔴 *database first and use it*
+===================
+
+create database if not exists zeyodb;
+use zeyodb;
+
+===================
+🔴 *create table*
+===================
+
+drop table if exists zeyotab;
+create table zeyotab(id int,name varchar(100),city varchar(100));
+
+===================
+🔴 *insert data to the data*
+===================
+
+
+insert into zeyotab values(1,'sai','chennai');
+insert into zeyotab values(2,'ravi','hyderabad');
+insert into zeyotab values(3,'rani','chennai');
+insert into zeyotab values(4,'vasu','bangalore');
+
+===================
+🔴 *query and check the data*
+===================
+
+select * from zeyotab;
+
+===================
+🔴 *come out of mysql*
+===================
+
+quit;
+
+
+===================
+🔴 *Execute sqoop command*
+===================
+
+
+sqoop import --connect jdbc:mysql://localhost/zeyodb --username root --password cloudera --m 1 --table zeyotab --delete-target-dir --target-dir /user/cloudera/firstimport
+
+===================
+🔴 *validate the date*
+===================
+
+
+hadoop   fs   -ls     /user/cloudera/firstimport
+hadoop   fs   -cat    /user/cloudera/firstimport/part-m-00000
+
+
+
