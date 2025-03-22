@@ -5,7 +5,7 @@
 🔴 *Go to mysql*
 ===================
 
-mysql -uroot  -pAditya908 -h bhuvanadb.c984uw2uav5q.ap-south-1.rds.amazonaws.com
+mysql -uroot  -pAditya908 -h prabadb.cpwekyc2ag29.ap-south-1.rds.amazonaws.com
 
 ===================
 🔴 *Create database first and use it*
@@ -51,7 +51,7 @@ quit;
 🔴 *Execute sqoop import command*
 ====================
 
-sqoop import --connect jdbc:mysql://bhuvanadb.c984uw2uav5q.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908  --m 1 --table zeyotab --delete-target-dir --target-dir /user/LABUSER/firstimport
+sqoop import --connect jdbc:mysql://prabadb.cpwekyc2ag29.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908  --m 1 --table zeyotab --delete-target-dir --target-dir /user/LABUSER/firstimport
 
 ===================
 🔴 *Validate the data*
@@ -59,3 +59,7 @@ sqoop import --connect jdbc:mysql://bhuvanadb.c984uw2uav5q.ap-south-1.rds.amazon
 
 hadoop   fs   -ls     /user/LABUSER/firstimport
 hadoop   fs   -cat    /user/LABUSER/firstimport/part-m-00000
+
+
+
+
