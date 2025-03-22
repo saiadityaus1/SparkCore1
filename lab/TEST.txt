@@ -1,0 +1,7 @@
+===================
+🔴 *test below commands*
+===================
+
+hadoop   fs   -ls     /user/LABUSER/
+
+hadoop   fs   -mkdir    /user/LABUSER/testdir
