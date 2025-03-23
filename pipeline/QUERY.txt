@@ -1,0 +1,74 @@
+🔴 cloudera query imports
+==================
+
+
+hadoop dfsadmin -safemode leave
+
+
+==================
+🔴 MYSQL INSIDE
+==================
+
+
+mysql -uroot -pcloudera
+
+================
+🔴 Database creation
+================
+
+create database if not exists zeyodb;
+
+use zeyodb;
+
+================
+🔴 Two Table creation
+================
+
+drop table if exists z1;
+create table z1 (id int,name varchar(100),city varchar(100),mode varchar(100));
+insert into z1 values(1,'zeyo','chennai','cash');
+insert into z1 values(2,'hema','hyderabad','credit');
+insert into z1 values(3,'raji','chennai','cash');
+insert into z1 values(4,'viru','delhi','credit');
+
+
+drop table if exists z2;
+create table z2 (id int,product varchar(100));
+insert into z2 values(1,'cookies');
+insert into z2 values(2,'mobile');
+insert into z2 values(3,'laptop');
+insert into z2 values(4,'mouse');
+
+================
+🔴Validate Tables
+================
+
+select * from z1;
+select * from z2;
+
+
+================
+🔴Validate Join
+================
+
+select a.*,b.product from z1 a join z2 b on a.id=b.id;
+
+================
+🔴 Quit from mysql
+================
+
+quit
+
+================
+🔴 sqoop import with query
+================
+
+sqoop import --connect jdbc:mysql://localhost/zeyodb --username root --password cloudera --m 1  --delete-target-dir --target-dir /user/cloudera/joindir --query "select a.*,b.product from z1 a join z2 b on a.id=b.id where \$CONDITIONS"
+
+================
+🔴 validate data
+================
+
+hadoop fs -ls /user/cloudera/joindir
+
+hadoop fs -cat /user/cloudera/joindir/part-m-00000
