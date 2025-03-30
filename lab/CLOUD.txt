@@ -1,10 +1,10 @@
 🔴 *LAB FOLKS*
 ==================
 
-cd ~
+cd
 rm -rf awscli-bundle.zip
 rm -rf awscli-bundle
-wget --no-check-certificate https://s3.amazonaws.com/aws-cli/awscli-bundle-1.16.188.zip -O awscli-bundle.zip
+curl https://s3.amazonaws.com/aws-cli/awscli-bundle-1.16.188.zip -o awscli-bundle.zip
 unzip awscli-bundle.zip
 ./awscli-bundle/install -i /home/LABUSER/aws -b /home/LABUSER/bin/aws
 aws=/home/LABUSER/bin/aws
@@ -12,7 +12,7 @@ cd
 rm -rf .aws
 mkdir .aws
 cd .aws
-wget https://zey43.s3.amazonaws.com/credentials
+wget https://zeyobuck43.s3.ap-south-1.amazonaws.com/credentials
 cd
-aws s3 ls s3://zey43
-cd
+aws s3 ls s3://zeyobuck43
+echo done
