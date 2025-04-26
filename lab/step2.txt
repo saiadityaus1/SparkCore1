@@ -5,7 +5,7 @@
 
 
 ===============
-Go to Mysql 
+🔴 Go to Mysql 
 ===============
 
 mysql -uroot -pcloudera
@@ -23,7 +23,7 @@ insert into customer_src select * From customer_total where id>=301 and id<=330;
 
 quit
 =============================
-Edge Node
+🔴 Edge Node
 =============================
 
 
@@ -45,7 +45,7 @@ hadoop fs -put /home/cloudera/avsrcdir/customer_src.avsc /user/cloudera/avscdirp
 
 
 ====================================
-Hive shell
+🔴 Hive shell
 ====================================
 
 hive
