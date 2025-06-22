@@ -1,0 +1,76 @@
+================
+🔴Lab QUERY Imports
+================
+
+bash
+
+mysql -uroot -pAditya908 -h pkdb.cp26emics9yb.ap-south-1.rds.amazonaws.com
+
+
+================
+🔴 Database creation
+================
+
+
+create database if not exists LABUSER;
+use LABUSER;
+
+
+================
+🔴 Two Table creation
+================
+
+
+
+drop table if exists z1;
+create table z1 (id int,name varchar(100),city varchar(100),mode varchar(100));
+insert into z1 values(1,'zeyo','chennai','cash');
+insert into z1 values(2,'hema','hyderabad','credit');
+insert into z1 values(3,'raji','chennai','cash');
+insert into z1 values(4,'viru','delhi','credit');
+select * from z1;
+
+drop table if exists z2;
+create table z2 (id int,product varchar(100));
+insert into z2 values(1,'cookies');
+insert into z2 values(2,'mobile');
+insert into z2 values(3,'laptop');
+insert into z2 values(4,'mouse');
+select * from z2;
+
+
+
+================
+🔴Validate Tables
+================
+select * from z1;
+select * from z2;
+
+
+================
+🔴Validate Join
+================
+
+select a.*,b.product from z1 a join z2 b on a.id=b.id;
+
+================
+🔴 Quit from mysql
+================
+
+quit;
+
+
+
+================
+🔴 sqoop import with query
+================
+
+sqoop import --connect jdbc:mysql://pkdb.cp26emics9yb.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Aditya908 --query "select a.*,b.product from z1 a join z2 b on a.id=b.id where \$CONDITIONS" --m 1 --delete-target-dir --target-dir /user/LABUSER/joindir
+
+================
+🔴 validate data
+================
+
+hadoop fs -ls /user/LABUSER/joindir
+
+hadoop fs -cat /user/LABUSER/joindir/part-m-00000
