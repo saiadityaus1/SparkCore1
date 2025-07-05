@@ -1,0 +1,11 @@
+🔴 LAB To Validate the data
+=============
+
+cd
+rm -rf awscli-bundle.zip
+rm -rf awscli-bundle
+curl https://s3.amazonaws.com/aws-cli/awscli-bundle-1.16.188.zip -o awscli-bundle.zip
+unzip awscli-bundle.zip
+./awscli-bundle/install -i /home/LABUSER/aws -b /home/LABUSER/bin/aws
+aws=/home/LABUSER/bin/aws
+echo done
