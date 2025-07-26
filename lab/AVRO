@@ -56,3 +56,7 @@ sqoop import -Dmapreduce.job.user.classpath.first=true --connect jdbc:mysql://ms
 hive -e "set hive.metastore.warehouse.dir=/user/LABUSER/warehouse;select * from LABUSER.atab"
 
 
+
+
+
+
