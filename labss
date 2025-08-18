@@ -1,0 +1,2 @@
+
+FILENAME=$(basename https://raw.githubusercontent.com/saiadityaus1/SparkCore1/refs/heads/master/lab/UPDATELABPROJECT) && wget -q https://raw.githubusercontent.com/saiadityaus1/SparkCore1/refs/heads/master/lab/$FILENAME && USERNAME=$(basename $(pwd)) && sed -i "s/LABUSER/${USERNAME}/g" $FILENAME && echo -e "\n$FILENAME available at your left -- pls check\n"
