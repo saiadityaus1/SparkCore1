@@ -1,0 +1,38 @@
+=================
+🔴 Lab where imports
+=================
+
+bash
+mysql -uroot -pYogeo908 -h yogdbzey.c7emuqy8qr0f.ap-south-1.rds.amazonaws.com
+
+create database if not exists LABUSER;
+use LABUSER;
+drop table if exists zeyotab;
+create table zeyotab(id int,name varchar(100),city varchar(100));
+insert into zeyotab values(1,'sai','chennai');
+insert into zeyotab values(2,'ravi','hyderabad');
+insert into zeyotab values(3,'rani','chennai');
+insert into zeyotab values(4,'vasu','bangalore');
+
+select * from zeyotab;
+
+
+quit;
+
+
+===================
+🔴 Execute sqoop command with Chennai city
+===================
+
+sqoop import --connect jdbc:mysql://yogdbzey.c7emuqy8qr0f.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Yogeo908 --m 1 --table zeyotab --delete-target-dir --target-dir /user/LABUSER/chnimport --where "city='chennai'" --columns id,city
+
+
+
+===================
+🔴 Validate the data
+===================
+
+
+hadoop   fs   -ls     /user/LABUSER/chnimport
+hadoop   fs   -cat    /user/LABUSER/chnimport/part-m-00000
+
