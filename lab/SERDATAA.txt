@@ -1,0 +1,36 @@
+LAB FOLKS
+
+🔴LAB SERIALIZATION Mysql
+=====================
+
+bash
+mysql -uroot -pYogeo908 -h yogdbzey.c7emuqy8qr0f.ap-south-1.rds.amazonaws.com
+
+create database if not exists LABUSER;
+use LABUSER;
+drop table if exists cust;
+drop table cust;
+create table cust(id int,name varchar(100));
+insert into cust value(1,'zeyo');
+insert into cust value(2,'analytics');
+select * from cust;
+
+=====================
+🔴 quit
+=====================
+
+quit
+
+=====================
+🔴 Sqoop Import
+=====================
+
+sqoop import --connect jdbc:mysql://yogdbzey.c7emuqy8qr0f.ap-south-1.rds.amazonaws.com/LABUSER --username root --password Yogeo908 --table cust --m 1 --target-dir /user/LABUSER/pardir --as-parquetfile
+
+=====================
+🔴 Validate Data Import
+=====================
+
+hadoop   fs   -ls    /user/LABUSER/pardir
+
+hadoop   fs    -cat   /user/LABUSER/pardir/*
