@@ -1,0 +1,11 @@
+complaint_id,customer_id,customer_name,city,product,complaint_text,complaint_date
+1,C001,Ravi,Hyderabad,Mobile,My mobile is overheating and battery drains quickly,2026-06-01
+2,C002,Sneha,Bangalore,Laptop,Laptop delivery is delayed by 8 days,2026-06-02
+3,C003,Arjun,Chennai,TV,TV screen is damaged and support is not responding,2026-06-03
+4,C004,Priya,Hyderabad,Headphones,Sound quality is poor and mic is not working,2026-06-04
+5,C005,Kiran,Pune,Washing Machine,Installation team has not visited yet,2026-06-05
+6,C006,Meena,Delhi,Mobile,The phone speaker stopped working after two days,2026-06-06
+7,C007,Vikram,Mumbai,Laptop,Received wrong charger with my laptop,2026-06-07
+8,C008,Anjali,Hyderabad,TV,Installation was delayed and customer care did not respond,2026-06-08
+9,C009,Rahul,Chennai,Headphones,The headset is good and delivery was fast,2026-06-09
+10,C010,Neha,Bangalore,Mobile,Refund is pending for more than 15 days,2026-06-10
